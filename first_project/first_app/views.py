@@ -3,4 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hola mundo")
+    json = {
+        'inserted_value': 'Nuevo valor actualizado views.py'
+    }
+    return render(request, 'first_app/index.html', context=json)
